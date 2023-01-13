@@ -35,7 +35,7 @@ body{
 }
 ::-webkit-scrollbar-thumb{
     border-radius: 15px;
-    background-color: rgb(54, 149, 181);
+    background-color: rgb(54, 149, 181);    
     background-image: -webkit-linear-gradient(90deg,transparent,rgba(83, 81, 81, 0.164) 50%,transparent,transparent)
 }
 .card-container{
