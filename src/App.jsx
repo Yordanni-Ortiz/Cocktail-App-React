@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import DrinksCard from "./components/DrinksCard";
 import { BiDrink } from "react-icons/bi";
+import Message from "./components/Message";
 
 function App() {
   const [drinksData, setDrinksData] = useState([]);
@@ -11,7 +12,7 @@ function App() {
   useEffect(() => {
     axios
       .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
-      .then((resp) => setDrinksData(resp.data))
+      .then((resp) => setDrinksData(resp.data.drinks))
       .catch((err) => console.err(err));
   }, [drink]);
 
@@ -34,7 +35,7 @@ function App() {
           </button>
         </form>
       </div>
-      <DrinksCard data={drinksData} />
+      {drinksData ? <DrinksCard data={drinksData} /> : <Message/>}
     </div>
   );
 }

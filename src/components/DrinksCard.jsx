@@ -4,7 +4,19 @@ const DrinksCard = ({ data }) => {
   return (
     <article>
       <div className="card-container">
-        {data.drinks?.map((info) => (
+        {data
+        .sort((a, b) => {
+          if (a.strDrink < b.strDrink){
+            return -1
+          }
+          else if (b.strDrink < a.strDrink){
+            return 1
+          }
+          else {
+            return 0
+          }
+        })
+        .map((info) => (
           <div key={info.idDrink}>
             <div className="card">
               <div>
