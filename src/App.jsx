@@ -1,34 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import DrinksCard from "./components/DrinksCard";
+import { BiDrink } from "react-icons/bi";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [drinksData, setDrinksData] = useState([]);
+  const [drink, setDrink] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
+      .then((resp) => setDrinksData(resp.data))
+      .catch((err) => console.err(err));
+  }, [drink]);
+
+  const searchDrink = (e) => {
+    e.preventDefault();
+    setDrink(e.target[0].value);
+  };
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="input-wrapper">
+        <form onSubmit={(e) => searchDrink(e)}>
+          <input
+            type="text"
+            className="input-search"
+            placeholder="   Buscar bebidas"
+          />
+          <button className="btn">
+            <BiDrink className="icon" />
+          </button>
+        </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <DrinksCard data={drinksData} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
