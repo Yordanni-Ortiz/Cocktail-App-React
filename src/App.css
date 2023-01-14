@@ -71,9 +71,16 @@ img{
     border: 2px solid rgb(7, 141, 209);
     outline: none;
 }
-
 .icon{
     position: absolute;
     top: 38px;
     left: 830px;
+}
+.alert{
+    margin-top: 150px;
+    text-align: center;
+}
+.copa{
+    width: 200px;
+    
 }
