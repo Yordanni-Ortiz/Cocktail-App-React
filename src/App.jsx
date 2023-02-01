@@ -2,8 +2,8 @@ import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import DrinksCard from "./components/DrinksCard";
-import { BiDrink } from "react-icons/bi";
 import Message from "./components/Message";
+import coctel from "./data/img/coctel-con-rodaja-de-limon.png";
 
 function App() {
   const [drinksData, setDrinksData] = useState([]);
@@ -24,18 +24,18 @@ function App() {
   return (
     <div className="App">
       <div className="input-wrapper">
-        <form onSubmit={(e) => searchDrink(e)}>
+        <form className="form-input" onSubmit={(e) => searchDrink(e)}>
           <input
             type="text"
             className="input-search"
-            placeholder="   Buscar bebidas"
+            placeholder="Buscar bebidas"
           />
           <button className="btn">
-            <BiDrink className="icon" />
+            <img src={coctel} className="btn-img" />
           </button>
         </form>
       </div>
-      {drinksData ? <DrinksCard data={drinksData} /> : <Message/>}
+      {drinksData ? <DrinksCard data={drinksData} /> : <Message />}
     </div>
   );
 }

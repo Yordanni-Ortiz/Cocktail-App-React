@@ -1,86 +1,100 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    padding: 2rem;
-    background-color: rgb(153, 172, 179);
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  background-color: rgb(153, 172, 179);
 }
 .card {
- border: 1px solid black;
- text-align: center;
- width: 290px;
- margin: auto;
- background-color: lightblue;
- height: 450px;
- overflow: hidden;
- overflow-y: scroll ;
- border-radius: 2%;
+  border: 1px solid black;
+  text-align: center;
+  width: 290px;
+  margin: auto;
+  background-color: lightblue;
+  height: 450px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 2%;
 }
-.card:hover{
-    transform: scale(1.1);
+.card:hover {
+  transform: scale(1.1);
 }
-::-webkit-scrollbar{
-    width: 10px;
-    background-color: rgb(54, 149, 181);
-    border-radius: 15px;
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(54, 149, 181);
+  border-radius: 15px;
 }
-::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgb(54, 149, 181);
-    border-radius: 15px;
-    background-color: #cccccc42;
-
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgb(54, 149, 181);
+  border-radius: 15px;
+  background-color: #cccccc42;
 }
-::-webkit-scrollbar-thumb{
-    border-radius: 15px;
-    background-color: rgb(54, 149, 181);    
-    background-image: -webkit-linear-gradient(90deg,transparent,rgba(83, 81, 81, 0.164) 50%,transparent,transparent)
+::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: rgb(54, 149, 181);
+  background-image: -webkit-linear-gradient(
+    90deg,
+    transparent,
+    rgba(83, 81, 81, 0.164) 50%,
+    transparent,
+    transparent
+  );
 }
-.card-container{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-    margin-top: 50px;
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin-top: 50px;
 }
-img{
-    max-width: 90%;
-    border-radius: 5%;
-    margin-top: 12px;
+img {
+  max-width: 90%;
+  border-radius: 5%;
+  margin-top: 12px;
 }
-.name{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.name {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.text{
-    padding-left: 10px;
-    padding-right: 10px ;
-    padding-bottom: 10px;
+.text {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
-.input-search{
-    height: 30px;
-        margin-left: 45%;
+.form-input {
+  display: flex;
+  justify-content: center;
 }
-.btn{
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
+.btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
-.input-search{
-    border-radius: 10px;
-    border: 2px solid rgb(7, 141, 209);
-    outline: none;
+.btn-img {
+  position: relative;
+  z-index: 1;
+  margin: 4px 0 0 130px;
+  width: 20px;
+  cursor: pointer;
 }
-.icon{
-    position: absolute;
-    top: 38px;
-    left: 830px;
+.input-search {
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(7, 141, 209);
+  outline: none;
+  position: absolute;
+  padding-left: 15px;
 }
-.alert{
-    margin-top: 150px;
-    text-align: center;
+.icon {
+  position: absolute;
+  margin: 0 auto;
 }
-.copa{
-    width: 200px;
-    
+.alert {
+  margin-top: 150px;
+  text-align: center;
+}
+.copa {
+  width: 200px;
 }
