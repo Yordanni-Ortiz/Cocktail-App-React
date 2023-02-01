@@ -80,11 +80,12 @@ img {
   cursor: pointer;
 }
 .input-search {
+  position: absolute;
   height: 30px;
   border-radius: 10px;
   border: 2px solid rgb(7, 141, 209);
   outline: none;
-  position: absolute;
+  
   padding-left: 15px;
 }
 .icon {
